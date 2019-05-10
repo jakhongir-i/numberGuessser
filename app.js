@@ -18,11 +18,11 @@ minNum.textContent = min;
 maxNum.textContent = max;
 
 // Play again event listener
-game.addEventListener('mousedown', function (e) {
-  if(e.target.className === 'play-again') {
+game.addEventListener("mousedown", function(e) {
+  if (e.target.className === "play-again") {
     window.location.reload();
   }
-})
+});
 
 // Listen for guess
 guessBtn.addEventListener("click", function() {
@@ -31,9 +31,7 @@ guessBtn.addEventListener("click", function() {
   // Validate
   if (isNaN(guess) || guess < min || guess > max) {
     setMessage(`Please enter a number between ${min} and ${max}`, "red");
-  }
-
-  else if (guess === winningNum) {
+  } else if (guess === winningNum) {
     //Game over - won
     gameOver(true, `${winningNum} is correct! YOU WIN!`);
   } else {
@@ -81,5 +79,5 @@ function setMessage(msg, color) {
 
 // Winning Number
 function getRandomNum(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min )
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
